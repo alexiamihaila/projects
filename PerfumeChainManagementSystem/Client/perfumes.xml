@@ -1,0 +1,28 @@
+<Model.PerfumeList>
+  <perfumeList>
+    <Model.Perfume>
+      <perfumeId>1</perfumeId>
+      <name>L Interdit</name>
+      <producer>Givenchy</producer>
+      <price>72</price>
+    </Model.Perfume>
+    <Model.Perfume>
+      <perfumeId>2</perfumeId>
+      <name>Libre</name>
+      <producer>YSL</producer>
+      <price>80</price>
+    </Model.Perfume>
+    <Model.Perfume>
+      <perfumeId>3</perfumeId>
+      <name>J Adore</name>
+      <producer>Dior</producer>
+      <price>65</price>
+    </Model.Perfume>
+    <Model.Perfume>
+      <perfumeId>4</perfumeId>
+      <name>Good Girl</name>
+      <producer>Carolina Herrera</producer>
+      <price>73</price>
+    </Model.Perfume>
+  </perfumeList>
+</Model.PerfumeList>
