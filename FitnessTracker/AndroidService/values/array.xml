@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="exercise_array">
+        <item>Bicep Curls</item>
+        <item>Lateral Raises</item>
+        <item>Bent-over Rows</item>
+        <item>Shoulder Press</item>
+        <item>Squats</item>
+        <item>Plank</item>
+        <item>Lunges</item>
+        <item>Romanian Deadlift</item>
+        <item>No Activity</item>
+    </string-array>
+</resources>
