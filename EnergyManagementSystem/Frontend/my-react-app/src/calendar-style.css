@@ -1,0 +1,7 @@
+.react-calendar__navigation__label {
+    color: black;
+  }
+  
+  .react-calendar__tile--weekend:not(.react-calendar__tile--active) {
+    color: black;
+  }

@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  devices_db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'devices_database'
+      MYSQL_ROOT_PASSWORD: 'Wahn9tg8!'
+    ports:
+      - "3307:3306"
+    volumes:
+      - my-db:/var/lib/mysql
+    networks:
+      demo_net:
+        ipv4_address: 172.30.0.3
+  devices_microservice:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    ports:
+      - "8082:8082"
+    environment:
+      - DB_IP=devices_db
+      - DB_PORT=3306
+      - DB_DBNAME=devices_database
+      - DB_USER=root
+      - DB_PASSWORD=Wahn9tg8!
+    image: deviceimg
+    networks:
+      demo_net:
+        ipv4_address: 172.30.0.2
+
+volumes:
+  my-db:
+
+networks:
+  demo_net:
+    external: true
