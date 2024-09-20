@@ -1,0 +1,40 @@
+version: '3'
+
+
+services:
+  userss_db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'users_database'
+      MYSQL_ROOT_PASSWORD: 'Wahn9tg8!'
+    ports:
+      - "3308:3306"
+    volumes:
+      - my-db:/var/lib/mysql
+    networks:
+      demo_net:
+        ipv4_address: 172.30.0.4
+  userss_microservice:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    image: uuserimg
+    ports:
+      - "8081:8083"
+    environment:
+      - DB_IP=userss_db
+      - DB_PORT=3306
+      - DB_DBNAME=users_database
+      - DB_USER=root
+      - DB_PASSWORD=Wahn9tg8!
+    networks:
+      demo_net:
+        ipv4_address: 172.30.0.5
+
+volumes:
+  my-db:
+
+networks:
+  demo_net:
+    external: true
