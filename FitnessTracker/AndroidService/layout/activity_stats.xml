@@ -1,0 +1,158 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EAE2FA"
+    android:padding="16dp"
+    tools:context=".Activities.StatsActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Header Section -->
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="10dp"
+            android:text="Workout Report"
+            android:textColor="#3949AB"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/dateRangeSelector"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Date Range Selector -->
+        <TextView
+            android:id="@+id/dateRangeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="24dp"
+            android:text="Date Range:"
+            android:textColor="#3949AB"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toStartOf="@+id/dateRangeSelector"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title" />
+
+        <Spinner
+            android:id="@+id/dateRangeSelector"
+            style="@style/CustomSpinner"
+            android:layout_width="157dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:minWidth="120dp"
+            android:minHeight="48dp"
+            app:layout_constraintBottom_toBottomOf="@id/dateRangeLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/dateRangeLabel"
+            app:layout_constraintTop_toTopOf="@id/dateRangeLabel" />
+
+        <!-- Summary Section -->
+        <TextView
+            android:id="@+id/totalWorkoutsLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="16dp"
+            android:text="Total Workouts:"
+            android:textColor="#3949AB"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dateRangeLabel" />
+
+        <TextView
+            android:id="@+id/total_workouts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="10"
+            android:textColor="#9136F8"
+            android:textSize="20dp"
+            app:layout_constraintStart_toEndOf="@id/totalWorkoutsLabel"
+            app:layout_constraintTop_toTopOf="@id/totalWorkoutsLabel" />
+
+        <TextView
+            android:id="@+id/totalDurationLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:text="Total Duration:"
+            android:textColor="#3949AB"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/totalWorkoutsLabel" />
+
+        <TextView
+            android:id="@+id/total_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="5 hrs"
+            android:textColor="#9136F8"
+            android:textSize="20dp"
+            app:layout_constraintStart_toEndOf="@id/totalDurationLabel"
+            app:layout_constraintTop_toTopOf="@id/totalDurationLabel" />
+
+        <TextView
+            android:id="@+id/totalCaloriesLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:text="Total Calories:"
+            android:textColor="#3949AB"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/totalDurationLabel" />
+
+        <TextView
+            android:id="@+id/total_calories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="1500"
+            android:textColor="#9136F8"
+            android:textSize="20dp"
+            app:layout_constraintStart_toEndOf="@id/totalCaloriesLabel"
+            app:layout_constraintTop_toTopOf="@id/totalCaloriesLabel" />
+
+        <!-- Detailed Breakdown -->
+        <TextView
+            android:id="@+id/exerciseBreakdownLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="7dp"
+            android:text="Exercise Breakdown:"
+            android:textColor="#3949AB"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/exerciseReclycerView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/totalCaloriesLabel" />
+
+        <androidx.recyclerview.widget.RecyclerView
+
+            android:id="@+id/exerciseReclycerView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/exerciseBreakdownLabel" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
